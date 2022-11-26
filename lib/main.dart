@@ -1,20 +1,20 @@
 /*
- * Copyright © 2021 Ansh Gandhi
+ * Copyright © 2022 Ansh Gandhi
  *
- * This file is part of Freight Frenzy Scorer.
+ * This file is part of Power Play Scorer.
  *
- * Freight Frenzy Scorer is free software: you can redistribute it and/or modify
+ * Power Play Scorer is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Freight Frenzy Scorer is distributed in the hope that it will be useful,
+ * Power Play Scorer is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Freight Frenzy Scorer.  If not, see <https://www.gnu.org/licenses/>.
+ * along with Power Play Scorer.  If not, see <https://www.gnu.org/licenses/>.
  *
  * Original Author: Ansh Gandhi
  * Original Source Code: <https://github.com/anshgandhi4/FreightFrenzyScorer>
@@ -55,8 +55,6 @@ Num _eg1 = Num();
 Num _eg2 = Num();
 Num _eg3 = Num();
 Num _eg4 = Num();
-Num _eg5 = Num();
-Num _eg6 = Num();
 
 Num _p1 = Num();
 Num _p2 = Num();
@@ -93,7 +91,7 @@ void setA(int newA) {
 }
 
 void calcA() {
-    setA(10 * _a1.getInt() + 3 * _a2.getInt() + 6 * _a3.getInt() + 5 * _a4.getInt() + 10 * _a5.getInt() + 2 * _a6.getInt() + 6 * _a7.getInt() + 10 * _a8.getInt() + 20 * _a9.getInt());
+    setA(2 * _a1.getInt() + 2 * _a2.getInt() + 1 * _a3.getInt() + 2 * _a4.getInt() + 3 * _a5.getInt() + 4 * _a6.getInt() + 5 * _a7.getInt() + 10 * _a8.getInt() + 20 * _a9.getInt());
 }
 
 int getT() {
@@ -106,7 +104,7 @@ void setT(int newT) {
 }
 
 void calcT() {
-    setT(_t1.getInt() + 2 * _t2.getInt() + 4 * _t3.getInt() + 6 * _t4.getInt() + 4 * _t5.getInt());
+    setT(1 * _t1.getInt() + 2 * _t2.getInt() + 3 * _t3.getInt() + 4 * _t4.getInt() + 5 * _t5.getInt());
 }
 
 int getEG() {
@@ -119,7 +117,7 @@ void setEG(int newEG) {
 }
 
 void calcEG() {
-    setEG(6 * _eg1.getInt() + 10 * _eg2.getInt() + 20 * _eg3.getInt() + 3 * _eg4.getInt() + 6 * _eg5.getInt() + 15 * _eg6.getInt());
+    setEG(3 * _eg1.getInt() + 10 * _eg2.getInt() + 20 * _eg3.getInt() + 2 * _eg4.getInt());
 }
 
 int getP() {
@@ -151,7 +149,7 @@ class _HomeState extends State<Home> {
             backgroundColor: Colors.black,
             appBar: AppBar(
                 title: const Text(
-                    'Freight Frenzy Scorer',
+                    'Power Play Scorer',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 24.0,
@@ -514,7 +512,7 @@ class _LogoState extends State<Logo> {
     @override
     Widget build(BuildContext context) {
         return Image.asset(
-            'assets/FreightFrenzyLogo.png',
+            'assets/PowerPlayLogo.png',
             height: 125,
             width: 125,
         );
@@ -552,9 +550,9 @@ class Auto extends StatefulWidget {
 class _AutoState extends State<Auto> {
     late CustomSlider a1;
     late CustomSlider a2;
-    late CustomSlider a3;
-    late CustomSlider a4;
-    late CustomSlider a5;
+    late CustomButtonInput a3;
+    late CustomButtonInput a4;
+    late CustomButtonInput a5;
     late CustomButtonInput a6;
     late CustomButtonInput a7;
     late CustomSlider a8;
@@ -562,11 +560,11 @@ class _AutoState extends State<Auto> {
 
     @override
     Widget build(BuildContext context) {
-        a1 = CustomSlider(scorevar: _a1, update: calcA, minvar: 0, maxvar: 1, parent: this);
+        a1 = CustomSlider(scorevar: _a1, update: calcA, minvar: 0, maxvar: 2, parent: this);
         a2 = CustomSlider(scorevar: _a2, update: calcA, minvar: 0, maxvar: 2, parent: this);
-        a3 = CustomSlider(scorevar: _a3, update: calcA, minvar: 0, maxvar: 2, parent: this);
-        a4 = CustomSlider(scorevar: _a4, update: calcA, minvar: 0, maxvar: 2, parent: this);
-        a5 = CustomSlider(scorevar: _a5, update: calcA, minvar: 0, maxvar: 2, parent: this);
+        a3 = CustomButtonInput(scorevar: _a3, update: calcA, parent: this);
+        a4 = CustomButtonInput(scorevar: _a4, update: calcA, parent: this);
+        a5 = CustomButtonInput(scorevar: _a5, update: calcA, parent: this);
         a6 = CustomButtonInput(scorevar: _a6, update: calcA, parent: this);
         a7 = CustomButtonInput(scorevar: _a7, update: calcA, parent: this);
         a8 = CustomSlider(scorevar: _a8, update: calcA, minvar: 0, maxvar: 2, parent: this);
@@ -587,7 +585,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a1,
                                 const Text(
-                                    'Ducks Delivered',
+                                    'Parked in Substation',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -602,7 +600,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a2,
                                 const Text(
-                                    'Storage Park',
+                                    'Parked In Terminal',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -617,7 +615,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a3,
                                 const Text(
-                                    'Full Storage Park',
+                                    'Cones In Terminal',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -632,7 +630,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a4,
                                 const Text(
-                                    'Warehouse Park',
+                                    'Cones On Ground Junction',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -647,7 +645,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a5,
                                 const Text(
-                                    'Full Warehouse Park',
+                                    'Cones On Low Junction',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -662,7 +660,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a6,
                                 const Text(
-                                    'Storage Unit Freights',
+                                    'Cones On Medium Junction',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -677,7 +675,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a7,
                                 const Text(
-                                    'Shipping Hub Freights',
+                                    'Cones On High Junction',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -692,7 +690,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a8,
                                 const Text(
-                                    'Duck Bonus',
+                                    'Signal Bonus (default sleeve)',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -707,7 +705,7 @@ class _AutoState extends State<Auto> {
                             children: <Widget>[
                                 a9,
                                 const Text(
-                                    'Team Element Bonus',
+                                    'Signal Bonus (custom sleeve)',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -782,7 +780,7 @@ class _TeleopState extends State<Teleop> {
                           children: <Widget>[
                               t1,
                               const Text(
-                                  'Storage Unit Freights',
+                                  'Cones In Terminal',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -797,7 +795,7 @@ class _TeleopState extends State<Teleop> {
                           children: <Widget>[
                               t2,
                               const Text(
-                                  'Level 1 Freights',
+                                  'Cones On Ground Junction',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -812,7 +810,7 @@ class _TeleopState extends State<Teleop> {
                           children: <Widget>[
                               t3,
                               const Text(
-                                  'Level 2 Freights',
+                                  'Cones On Low Junction',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -827,7 +825,7 @@ class _TeleopState extends State<Teleop> {
                           children: <Widget>[
                               t4,
                               const Text(
-                                  'Level 3 Freights',
+                                  'Cones On Medium Junction',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -842,7 +840,7 @@ class _TeleopState extends State<Teleop> {
                           children: <Widget>[
                               t5,
                               const Text(
-                                  'Shared Hub Freights',
+                                  'Cones On High Junction',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -878,8 +876,6 @@ class EndGame extends StatefulWidget {
         _eg2.setInt(0);
         _eg3.setInt(0);
         _eg4.setInt(0);
-        _eg5.setInt(0);
-        _eg6.setInt(0);
         endGameState.rebuild();
     }
 
@@ -889,21 +885,17 @@ class EndGame extends StatefulWidget {
 }
 
 class _EndGameState extends State<EndGame> {
-    late CustomSlider eg1;
+    late CustomButtonInput eg1;
     late CustomSlider eg2;
     late CustomSlider eg3;
     late CustomSlider eg4;
-    late CustomSlider eg5;
-    late CustomSlider eg6;
 
     @override
     Widget build(BuildContext context) {
-        eg1 = CustomSlider(scorevar: _eg1, update: calcEG, minvar: 0, maxvar: 12, parent: this);
-        eg2 = CustomSlider(scorevar: _eg2, update: calcEG, minvar: 0, maxvar: 1, parent: this);
+        eg1 = CustomButtonInput(scorevar: _eg1, update: calcEG, parent: this);
+        eg2 = CustomSlider(scorevar: _eg2, update: calcEG, minvar: 0, maxvar: 2, parent: this);
         eg3 = CustomSlider(scorevar: _eg3, update: calcEG, minvar: 0, maxvar: 1, parent: this);
         eg4 = CustomSlider(scorevar: _eg4, update: calcEG, minvar: 0, maxvar: 2, parent: this);
-        eg5 = CustomSlider(scorevar: _eg5, update: calcEG, minvar: 0, maxvar: 2, parent: this);
-        eg6 = CustomSlider(scorevar: _eg6, update: calcEG, minvar: 0, maxvar: 2, parent: this);
 
         return Card(
             color: Colors.grey.shade900,
@@ -919,7 +911,7 @@ class _EndGameState extends State<EndGame> {
                           children: <Widget>[
                               eg1,
                               const Text(
-                                  'Ducks Delivered',
+                                  'Junctions Owned',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -934,7 +926,7 @@ class _EndGameState extends State<EndGame> {
                           children: <Widget>[
                               eg2,
                               const Text(
-                                  'Alliance Hub Balance',
+                                  'Junctions Capped',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -949,7 +941,7 @@ class _EndGameState extends State<EndGame> {
                           children: <Widget>[
                               eg3,
                               const Text(
-                                  'Shared Hub Tip',
+                                  'Circuit Completed',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -964,37 +956,7 @@ class _EndGameState extends State<EndGame> {
                           children: <Widget>[
                               eg4,
                               const Text(
-                                  'Warehouse Park',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18.0,
-                                  ),
-                              ),
-                          ],
-                      ),
-                      const SizedBox(height: 5.0),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                              eg5,
-                              const Text(
-                                  'Full Warehouse Park',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18.0,
-                                  ),
-                              ),
-                          ],
-                      ),
-                      const SizedBox(height: 5.0),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                              eg6,
-                              const Text(
-                                  'Shipping Hub Caps',
+                                  'Parked in Terminal',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,

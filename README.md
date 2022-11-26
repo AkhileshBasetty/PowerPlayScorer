@@ -1,5 +1,5 @@
-# FreightFrenzyScorer
-A scorer app for the FTC Ultimate Goal Season.
+# PowerPlayScorer
+A scorer app for the FTC Power Play Season.
 
 Please share this app with others if you enjoyed it!
 
